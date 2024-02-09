@@ -71,7 +71,7 @@ function Win_Test(User){
     break ;
   }
 
-  document.querySelector('.result').innerHTML = `<img src="Images/${User}-emoji.png"> - <img src="Images/${Computer}-emoji.png"> . It's a ${stat}! . Wins : ${Score.Wins} , Losses : ${Score.Loss} , Ties : ${Score.Ties}.` ;
+  document.querySelector('.result').innerHTML = `<img src="Images/png/${User}-emoji.png"> - <img src="Images/png/${Computer}-emoji.png"> . It's a ${stat}! . Wins : ${Score.Wins} , Losses : ${Score.Loss} , Ties : ${Score.Ties}.` ;
 }
 
 function Autoplay(){
