@@ -1,0 +1,112 @@
+.header{ /*ne99essmou head 3 sections flexed , flex for better control in elements*/
+  align-items: center;/*each element shall be centred*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 57px;
+  background-color: white;
+  border-bottom: 1px solid rgb(222, 222, 222) ;
+
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.left_head{
+  align-items: center;
+  width: 200px;
+  display: grid;
+  column-gap: 25px;
+  grid-template-columns: 30px 1fr;
+  margin-left: 20px;
+}
+
+.center_head{
+  flex: 1;
+  max-width: 500px;
+  margin-left: 25px;
+  height: 57px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+.right_head{
+  width:240px;
+  margin-right: 20px;
+  margin-left: 50px;
+  align-items: center;
+  display: grid;
+  column-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.side_section{
+  border-right: 1px solid rgb(222, 222, 222) ;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  position: fixed;
+  width: 75px;
+  top: 57px;
+  left: 0;
+  bottom: 0;
+
+  align-items: center;/*each element shall be centred*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video_section{
+  margin-left: 75px;
+  background-color: rgb(239, 239, 239);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 20px 20px;
+}
+
+@media (min-width:1000px){
+  .video_section{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width:780px) and (min-width:561px){
+  .video_section{
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+  }
+}
+
+@media (max-width:560px){
+  .video_section{
+    grid-template-columns: 1fr;
+  }
+}
+
+.noti_div{
+  position: relative;
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+}
+
+.thumb_div{
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.info_div{
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 10px;
+}
+
+

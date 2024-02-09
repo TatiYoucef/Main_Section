@@ -1,0 +1,35 @@
+body{
+        font-family: Arial;
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .button01{ 
+        border: none; /*Design le coté*/
+        border-radius: 50px; /*ch7el m3ewwej fe les cotés*/
+        background-color: green; /*Couleur de font*/
+        color: white; /*Couleur de texte*/
+        padding: 15px 20px;
+        margin-bottom: 30px;/*espace berra le bouton*/
+        font-weight: bold;/*manipulating style of text , weight for thikness*/
+        font-size: 15px;
+        cursor: pointer;/*when hoveres , mouse will change*/
+      }
+
+      .Del{
+        border: none; /*Design le coté*/
+        border-radius: 50px; /*ch7el m3ewwej fe les cotés*/
+        background-color: red; /*Couleur de font*/
+        color: white; /*Couleur de texte*/
+        padding: 15px 20px;
+        margin-bottom: 30px;/*espace berra le bouton*/
+        font-weight: bold;/*manipulating style of text , weight for thikness*/
+        font-size: 15px;
+        cursor: pointer;/*when hoveres , mouse will change*/
+      }
+
+      input{
+        font-size: 15px;
+        font-weight: bold;/*manipulating style of text , weight for thikness*/
+        padding: 10px;
+      }
