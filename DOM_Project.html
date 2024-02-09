@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <title>DOM</title>
+
+    <style>
+
+      body{ /*default status*/
+       text-align: center; /*all small elements in are aligned to center*/
+       font-family:Arial ; /*type de texte*/
+       font-weight: bold;/*manipulating style of text , weight for thikness*/
+       font-size: 15px;/*text size*/
+       background-color: rgb(223, 218, 218);
+       margin-top: 50px;
+
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .block{
+        background-color: white;
+        box-shadow: 2px 2px 10px rgba(20, 20, 20, 0.2); /*vertical horizon blur color , shadow cast*/
+        padding: 20px 30px;
+        margin-bottom: 20px;
+        width: 500px;
+      }
+
+      .button01{ 
+        border: none; /*Design le coté*/
+        border-radius: 20px; /*ch7el m3ewwej fe les cotés*/
+        background-color: rgb(245, 9, 9); /*Couleur de font*/
+        color: white; /*Couleur de texte*/
+        padding-top: 10px; /*des espaces dakhel le bouton*/
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 30px;/*espace berra le bouton*/
+        margin-left: 10px ;
+        font-weight: bold;/*manipulating style of text , weight for thikness*/
+        font-size: 15px;
+        cursor: pointer;/*when hoveres , mouse will change*/
+
+        transition: background-color 200ms, box-shadow 200ms; /*when on anything , these options will take t to reach the final result*/
+      }
+
+      .button01:hover{ /*when hovered , we modify*/
+        background-color: rgb(253, 2, 2);
+        box-shadow: 5px 5px 10px rgba(20, 20, 20, 0.2); /*vertical horizon blur color*/
+      }
+
+      .button01:active{/*onclick , // //*/
+        background-color: rgb(255, 60, 60);
+        transition: 50ms;
+      }
+
+      .button02 , .game{
+        border-style: solid ; /*same color border eveywhere*/
+        border-color: rgb(21, 153, 21);
+        padding: 9px 15px;
+        background-color: rgb(21, 153, 21);
+        color: white;
+        font-weight: bold;/*manipulating style of text , weight for thikness*/
+        font-size: 15px;
+        cursor: pointer;
+
+        transition: 200ms;
+      }
+
+      .button02:hover{
+        background-color: white;
+        color: rgb(21, 153, 21);
+      }
+
+      .button02:active{
+        background-color: rgb(21, 153, 21);
+        color: white;
+
+        transition: 100ms;
+      
+      }
+
+      .Subscribed{
+        background-color: rgb(213, 204, 204);
+        color: black;
+      }
+
+      .Subscribed:hover{
+        background-color: rgb(237, 234, 234) ;
+      }
+
+      .Subscribed:active{
+        background-color: rgb(240, 239, 239) ;
+      }
+
+      input{
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      a{
+        font-size: 15px;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px black;
+      }
+
+      .game{
+
+        transition: padding 400ms,
+         background-color 200ms, 
+         color 200ms;
+      }
+
+      .game:hover{
+        background-color: white;
+        color: rgb(21, 153, 21);
+        padding: 18px 30px ;
+      }
+
+      .game:active{
+        background-color: rgb(21, 153, 21);
+        color: white;
+
+        transition: background-color 100ms, /*to transition faster*/
+         color 100ms;
+      }
+
+    </style>
+    
+  </head>
+
+  <body>
+
+    <div class="left_div"></div>
+
+    <div class="center_div">
+      <div class="block">
+        <p>Youtube Subscribe Button</p>
+        <button class="button01" onclick="Subscribe_Test('.button01')">Subscribe</button> 
+      </div>
+  
+      <div class="block">
+        <p>Shipping Calculator( >40$ for 10$ Shipping)</p>
+        <input placeholder="Cost of order" class="ship_input" onkeydown="
+          if(event.key === 'Enter'){
+            let x = document.querySelector('.ship_input').value  ;
+            Calcul_shipping(x) ;
+          }
+        "> 
+  
+        <button onclick="
+          let x = document.querySelector('.ship_input').value  ;
+          Calcul_shipping(x) ;
+  
+        " class="button02">Calculate</button>
+  
+        <p class="result"></p>
+  
+      </div>
+  
+        <div class="block">
+          <input placeholder="Type Something" class="text_input" onkeyup="
+          let text = document.querySelector('.text_input').value ;
+          document.querySelector('.result_text').innerHTML = text ;
+          "> 
+  
+          <p class="result_text"></p>
+        </div>
+  
+      
+  
+        <a href="http://127.0.0.1:5500/Testing_Game.html">
+          <button class="game">Rock Paper Scissors</button>
+        </a>
+    </div>
+
+    <div class="right_div"></div>
+
+    <script> 
+
+      function Subscribe_Test(class_name){ 
+        let elem = document.querySelector(class_name) ;
+        if(elem.innerHTML === 'Subscribe'){
+          elem.innerHTML = 'Subscribed' ; //innerText is better
+          elem.classList.add('Subscribed') ;
+        } 
+        else{
+          elem.innerText = 'Subscribe' ;
+          elem.classList.remove('Subscribed') ;
+        } 
+      }
+
+      function Calcul_shipping(input){
+        input = eval(input) ; //or Number() , chaine --> nombre
+        let sum ;
+        if(input <= 40) sum = input ;
+        else sum = input + 10 ;
+        
+        document.querySelector('.result').innerHTML = `=>${sum}$ .` ;
+
+      }
+
+    </script>
+
+  </body>  
+</html>
+
